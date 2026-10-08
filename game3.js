@@ -52,7 +52,7 @@
     }
 
     function clearCanvas() {
-        ctx.fillStyle = "#111f37";
+        ctx.fillStyle = "#811f37";
         ctx.fillRect(1, 1, canvas.width - 1, canvas.height - 1);
         
         // Рисуем легкую футуристичную сетку
@@ -189,8 +189,8 @@
     }
 
     window.addEventListener("mouseup", function (e) {
-        mx = event.clientX - rect.left; // Координата X
-        my = event.clientY - rect.right; // Координата Y
+        mx = event.pageX - rect.left; // Координата X
+        my = event.pageY - rect.right; // Координата Y
         if (Math.abs(mx - snake[0].x * gridSize) > Math.abs(my - snake[0].y * gridSize)) {
          if (dx === 0)   
          if (mx > snake[0].x * gridSize) { dx = 1; dy = 0; }

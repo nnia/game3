@@ -7,7 +7,7 @@
     const tileCountX = canvas.width / gridSize - 1;
     const tileCountY = canvas.height / gridSize - 1;
 
-    let snake = [{ x: 3, y: 3 }];
+    let snake = [{ x: 3, y: 3, c: 'O' }];
     let food = { x: 5, y: 5 };
     let dx = 1;
     let dy = 0;
@@ -73,6 +73,7 @@
     }
 
     function drawSnake() {
+        ctx.font = "20px sans-serif";
         snake.forEach((part, index) => {
             const isHead = index === 0;
             
@@ -103,6 +104,8 @@
                 gridSize - 2, 
                 isHead ? 6 : 4
             );
+                    
+            ctx.fillText(part.c, part.x * gridSize + gridSize/2, part.y * gridSize + gridSize/2);
         });
         // Сброс тени для других элементов
         ctx.shadowBlur = 0; 
@@ -119,7 +122,8 @@
         gradient.addColorStop(1, '#ff416c');
         
         ctx.fillStyle = gradient;
-        ctx.fillText("c", food.x * gridSize, food.y * gridSize);
+        ctx.font = "20px sans-serif";
+        ctx.fillText("c", food.x * gridSize + gridSize/2, food.y * gridSize + gridSize/2);
         ctx.shadowBlur = 0;
     }
 

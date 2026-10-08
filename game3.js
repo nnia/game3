@@ -11,7 +11,7 @@
     let dy = 0;
     let score = 0;
     let gameInterval;
-    const speed = 90; // Скорость игры (мс на один шаг)
+    const speed = 1000; // Скорость игры (мс на один шаг)
 
     function main() {
         if (hasGameEnded()) {
@@ -175,6 +175,11 @@
         main();
     }
 
+    window.addEventListener("mouseup", function (e) {
+        x = event.clientX; // Координата X
+        y = event.clientY; // Координата Y
+        if (hasGameEnded()) resetGame();
+    });
     window.addEventListener("keydown", e => {
         switch (e.key) {
             case "ArrowUp":

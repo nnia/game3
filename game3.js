@@ -1,5 +1,6 @@
  const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
+    const rect = canvas.getBoundingClientRect();
     const scoreElement = document.getElementById("score");
 
     const gridSize = 20;
@@ -186,14 +187,14 @@
     }
 
     window.addEventListener("mouseup", function (e) {
-        mx = event.clientX; // Координата X
-        my = event.clientY; // Координата Y
-        if (Math.abs(mx - snake[0].x) > Math.abs(my - snake[0].y)) {
-            if (mx > snake[0].x) { dx = 1; dy = 0; }
+        mx = event.clientX - rect.left; // Координата X
+        my = event.clientY - rect.right; // Координата Y
+        if (Math.abs(mx - snake[0].x * gridSize) > Math.abs(my - snake[0].y * gridSize)) {
+            if (mx > snake[0].x * gridSize) { dx = 1; dy = 0; }
             else { dx = -1; dy = 0; }
         }
         else {
-            if (my > snake[0].y) { dx = 0; dy = 1; }
+            if (my > snake[0].y * gridSize) { dx = 0; dy = 1; }
             else { dx = 0; dy = -1; }
         }     
         if (hasGameEnded()) resetGame();

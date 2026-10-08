@@ -1,4 +1,4 @@
- const canvas = document.getElementById("gameCanvas");
+    const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
     const rect = canvas.getBoundingClientRect();
     const scoreElement = document.getElementById("score");
@@ -111,8 +111,6 @@
     function drawFood() {
         ctx.shadowBlur = 15;
         ctx.shadowColor = "#ff416c";
-        
-        // Красивая градиентная еда (ягода)
         const gradient = ctx.createRadialGradient(
             food.x * gridSize + gridSize/2, food.y * gridSize + gridSize/2, 1,
             food.x * gridSize + gridSize/2, food.y * gridSize + gridSize/2, gridSize/2
@@ -121,9 +119,7 @@
         gradient.addColorStop(1, '#ff416c');
         
         ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(food.x * gridSize + gridSize/2, food.y * gridSize + gridSize/2, gridSize/2 - 2, 0, 2 * Math.PI);
-        ctx.fill();
+        ctx.fillText("c", food.x * gridSize, food.y * gridSize);
         ctx.shadowBlur = 0;
     }
 

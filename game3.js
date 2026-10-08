@@ -14,6 +14,9 @@
     let gameInterval;
     const speed = 1000; // Скорость игры (мс на один шаг)
 
+    let mx = 0;
+    let my = 0;
+
     function main() {
         if (hasGameEnded()) {
             ctx.fillStyle = "rgba(11, 15, 25, 0.8)";
@@ -38,7 +41,8 @@
         moveSnake();
         drawSnake();
 
-        ctx.fillText("ctx " + ctx.width + " " + ctx.height, canvas.width / 2, canvas.height / 2 + 5);
+        //ctx.fillText("ctx " + ctx.width + " " + ctx.height, canvas.width / 2, canvas.height / 2 + 5);
+        ctx.fillText("mx " + mx + " my " + my, canvas.width / 2, canvas.height / 2 + 5);
         ctx.fillText("canvas " + canvas.width + " " + canvas.height, canvas.width / 2, canvas.height / 2 + 20);
   
         gameInterval = setTimeout(main, speed);
@@ -182,8 +186,8 @@
     }
 
     window.addEventListener("mouseup", function (e) {
-        let mx = event.clientX; // Координата X
-        let my = event.clientY; // Координата Y
+        mx = event.clientX; // Координата X
+        my = event.clientY; // Координата Y
         if (Math.abs(mx - snake[0].x) > Math.abs(my - snake[0].y)) {
             if (mx > snake[0].x) { dx = 1; dy = 0; }
             else { dx = -1; dy = 0; }

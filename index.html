@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height="device-height", initial-scale=1.0">
-    <link rel="icon" href="ks.png" type="image/png">
+    <link rel="icon" href="ks.png" sizes="32x32" type="image/png">
     <title>Got the checksum!</title>
     <style>
         body {
@@ -20,7 +20,8 @@
         }
         .game-container {
             text-align: center;
-            position: relative;
+            position: fixed;
+            align-items: center;
         }
         h1 {
             text-align: center;
@@ -53,7 +54,7 @@
 </head>
 <body>
     <div class="game-container">
-        <h1>Got the checksum!</h1>
+        <h1>Get the checksum!</h1>
         <div class="score-board">Счёт: <span id="score">0</span></div>
         <canvas id="gameCanvas" width="device-width" height="device-height"></canvas>
     </div>

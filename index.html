@@ -1,14 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Got the checksum!</title>
     <style>
+        body {
+            background-color: #0b0f19;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .game-container {
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #00f2fe;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .score-board {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #a0aec0;
+        }
+        #score {
+            font-weight: bold;
+            color: #00f2fe;
+            text-shadow: 0 0 5px rgba(0, 242, 254, 0.5);
+        }
         canvas {
-            border: 3px solid green;
+            background: #111827;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 
+                        0 0 30px rgba(79, 172, 254, 0.15);
+            border: 2px solid #1f2937;
         }
     </style>
 </head>
 <body>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-    <script src="game3.js"></script>
+    <div class="game-container">
+    <h1>Got the checksum!</h1>
+    <div class="score-board">Счёт: <span id="score">0</span></div>
+    <canvas id="gameCanvas" width="device-width" height="device-height"></canvas>
+</div>
+<script src="game3.js"></script>
 </body>
+
+    
+

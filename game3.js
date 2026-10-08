@@ -34,9 +34,6 @@
         }
 
         clearCanvas();
-        ctx.fillText("ctx1 " + ctx.width + " " + ctx.height, canvas.width / 2, canvas.height / 2 + 5);
-        ctx.fillText("canvas1 " + canvas.width + " " + canvas.height, canvas.width / 2, canvas.height / 2 + 10);
-
         drawFood();
         moveSnake();
         drawSnake();
@@ -185,14 +182,14 @@
     }
 
     window.addEventListener("mouseup", function (e) {
-        x = event.clientX; // Координата X
-        y = event.clientY; // Координата Y
-        if (Math.abs(x - snake[0].x) > Math.abs(y - snake[0].y)) {
-            if (x > snake[0].x) { dx = 1; dy = 0; }
+        let mx = event.clientX; // Координата X
+        let my = event.clientY; // Координата Y
+        if (Math.abs(mx - snake[0].x) > Math.abs(my - snake[0].y)) {
+            if (mx > snake[0].x) { dx = 1; dy = 0; }
             else { dx = -1; dy = 0; }
         }
         else {
-            if (y > snake[0].y) { dx = 0; dy = 1; }
+            if (my > snake[0].y) { dx = 0; dy = 1; }
             else { dx = 0; dy = -1; }
         }     
         if (hasGameEnded()) resetGame();

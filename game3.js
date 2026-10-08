@@ -42,15 +42,15 @@
         drawSnake();
 
         //ctx.fillText("ctx " + ctx.width + " " + ctx.height, canvas.width / 2, canvas.height / 2 + 5);
-        ctx.fillText("mx " + mx + " my " + my, canvas.width / 2, canvas.height / 2 + 5);
+        ctx.fillText("mx " + mx + " my " + my + " snx " + snake[0].x + " sny " + snake[0].y, canvas.width / 2, canvas.height / 2 + 5);
         ctx.fillText("canvas " + canvas.width + " " + canvas.height, canvas.width / 2, canvas.height / 2 + 20);
   
         gameInterval = setTimeout(main, speed);
     }
 
     function clearCanvas() {
-        ctx.fillStyle = "#111827";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#118827";
+        ctx.fillRect(1, 1, canvas.width - 1, canvas.height - 1);
         
         // Рисуем легкую футуристичную сетку
         ctx.strokeStyle = "rgba(31, 41, 55, 0.4)";

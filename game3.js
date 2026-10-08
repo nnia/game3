@@ -34,12 +34,13 @@
         }
 
         clearCanvas();
+        ctx.fillText("ctx " + ctx.width + " " + ctx.height, ctx.width / 2, ctx.height / 2 - 20);
+        ctx.fillText("canvas " + canvas.width + " " + canvas.height, canvas.width / 2, canvas.height / 2 - 10);
         drawFood();
         moveSnake();
         drawSnake();
 
-        ctx.fillText("canvas "+canvas.width+" " + canvas.height, canvas.width / 2, canvas.height / 2 + 40);
-     
+    
         gameInterval = setTimeout(main, speed);
     }
 
@@ -188,7 +189,7 @@
             else { dx = -1; dy = 0; }
         }
         else {
-            if (y > snake[0].y} { dx = 0; dy = 1; }
+            if (y > snake[0].y) { dx = 0; dy = 1; }
             else { dx = 0; dy = -1; }
         }     
         if (hasGameEnded()) resetGame();

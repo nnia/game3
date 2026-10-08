@@ -37,7 +37,7 @@
         moveSnake();
         drawSnake();
 
-        //ctx.fillText("canvas "+canvas.width+" " + canvas.height, canvas.width / 2, canvas.height / 2 + 40);
+        ctx.fillText("canvas "+canvas.width+" " + canvas.height, canvas.width / 2, canvas.height / 2 + 40);
      
         gameInterval = setTimeout(main, speed);
     }

@@ -170,7 +170,7 @@
     }
 
     function resetGame() {
-        snake = [{ x: 10, y: 10 }];
+        snake = [{ x: 3, y: 3 }];
         food = { x: 5, y: 5 };
         dx = 1;
         dy = 0;
@@ -183,6 +183,14 @@
     window.addEventListener("mouseup", function (e) {
         x = event.clientX; // Координата X
         y = event.clientY; // Координата Y
+        if (Math.abs(x - snake[0].x) > Math.abs(y - snake[0].y) {
+            if (x > snake[0].x) { dx = 1; dy = 0; }
+            else { dx = -1; dy = 0; }
+        }
+        else {
+            if (y > snake[0].y} { dx = 0; dy = 1; }
+            else { dx = 0; dy = -1; }
+        }     
         if (hasGameEnded()) resetGame();
     });
     window.addEventListener("keydown", e => {

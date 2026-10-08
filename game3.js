@@ -3,7 +3,7 @@
     const scoreElement = document.getElementById("score");
 
     const gridSize = 20;
-    const tileCount = canvas.width / gridSize;
+    const tileCount = 8; // canvas.width / gridSize;
 
     let snake = [{ x: 10, y: 10 }];
     let food = { x: 5, y: 5 };

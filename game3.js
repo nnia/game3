@@ -3,8 +3,8 @@
     const scoreElement = document.getElementById("score");
 
     const gridSize = 20;
-    const tileCountX = canvas.width / gridSize;
-    const tileCountY = canvas.height / gridSize;
+    const tileCountX = canvas.width / gridSize - 1;
+    const tileCountY = canvas.height / gridSize - 1;
 
     let snake = [{ x: 3, y: 3 }];
     let food = { x: 5, y: 5 };
@@ -184,7 +184,7 @@
     window.addEventListener("mouseup", function (e) {
         x = event.clientX; // Координата X
         y = event.clientY; // Координата Y
-        if (Math.abs(x - snake[0].x) > Math.abs(y - snake[0].y) {
+        if (Math.abs(x - snake[0].x) > Math.abs(y - snake[0].y)) {
             if (x > snake[0].x) { dx = 1; dy = 0; }
             else { dx = -1; dy = 0; }
         }

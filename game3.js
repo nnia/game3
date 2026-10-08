@@ -3,9 +3,10 @@
     const scoreElement = document.getElementById("score");
 
     const gridSize = 20;
-    const tileCount = canvas.width / gridSize;
+    const tileCountX = canvas.width / gridSize;
+    const tileCountY = canvas.height / gridSize;
 
-    let snake = [{ x: 10, y: 10 }];
+    let snake = [{ x: 3, y: 3 }];
     let food = { x: 5, y: 5 };
     let dx = 1;
     let dy = 0;
@@ -49,11 +50,13 @@
         // Рисуем легкую футуристичную сетку
         ctx.strokeStyle = "rgba(31, 41, 55, 0.4)";
         ctx.lineWidth = 2;
-        for (let i = 0; i < tileCount; i++) {
+        for (let i = 0; i < tileCountX; i++) {
             ctx.beginPath();
             ctx.moveTo(i * gridSize, 0);
             ctx.lineTo(i * gridSize, canvas.height);
             ctx.stroke();
+        }
+       for (let i = 0; i < tileCountY; i++) {
             ctx.beginPath();
             ctx.moveTo(0, i * gridSize);
             ctx.lineTo(canvas.width, i * gridSize);
@@ -131,8 +134,8 @@
     }
 
     function generateFood() {
-        food.x = Math.floor(Math.random() * tileCount);
-        food.y = Math.floor(Math.random() * tileCount);
+        food.x = Math.floor(Math.random() * tileCountX);
+        food.y = Math.floor(Math.random() * tileCountY);
         
         // Проверяем, чтобы еда не спавнилась внутри змейки
         snake.forEach(part => {
@@ -142,7 +145,7 @@
 
     function hasGameEnded() {
         // Столкновение со стенами
-        if (snake[0].x < 0 || snake[0].x >= tileCount || snake[0].y < 0 || snake[0].y >= tileCount) return true;
+        if (snake[0].x < 0 || snake[0].x >= tileCountX || snake[0].y < 0 || snake[0].y >= tileCountY) return true;
         
         // Столкновение с собственным телом
         for (let i = 1; i < snake.length; i++) {

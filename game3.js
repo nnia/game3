@@ -28,7 +28,7 @@
             ctx.font = "16px sans-serif";
             ctx.fillStyle = "#a0aec0";
             ctx.shadowBlur = 0;
-            ctx.fillText("Нажмите пробел для перезапуска", canvas.width / 2, canvas.height / 2 + 40);
+            ctx.fillText("Нажмите для перезапуска", canvas.width / 2, canvas.height / 2 + 40);
             return;
         }
 
@@ -46,7 +46,7 @@
         
         // Рисуем легкую футуристичную сетку
         ctx.strokeStyle = "rgba(31, 41, 55, 0.4)";
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 2;
         for (let i = 0; i < tileCount; i++) {
             ctx.beginPath();
             ctx.moveTo(i * gridSize, 0);
@@ -194,10 +194,8 @@
             case "ArrowRight":
                 if (dx === 0) { dx = 1; dy = 0; }
                 break;
-            case " ": // Пробел для рестарта
-                if (hasGameEnded()) resetGame();
-                break;
         }
+        if (hasGameEnded()) resetGame();
     });
 
     main();

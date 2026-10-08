@@ -13,7 +13,7 @@
     let dy = 0;
     let score = 0;
     let gameInterval;
-    const speed = 1000; // Скорость игры (мс на один шаг)
+    const speed = 3000; // Скорость игры (мс на один шаг)
 
     let mx = 0;
     let my = 0;

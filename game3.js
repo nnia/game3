@@ -190,7 +190,7 @@
 
     document.addEventListener("mouseup", function (e) {
         mx = event.pageX - rect.left; // Координата X
-        my = event.pageY - rect.right; // Координата Y
+        my = event.pageY - rect.top; // Координата Y
         if (Math.abs(mx - snake[0].x * gridSize) > Math.abs(my - snake[0].y * gridSize)) {
          if (dx === 0)   
          if (mx > snake[0].x * gridSize) { dx = 1; dy = 0; }

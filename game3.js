@@ -192,12 +192,14 @@
         mx = event.clientX - rect.left; // Координата X
         my = event.clientY - rect.right; // Координата Y
         if (Math.abs(mx - snake[0].x * gridSize) > Math.abs(my - snake[0].y * gridSize)) {
-            if (mx > snake[0].x * gridSize) { dx = 1; dy = 0; }
+         if (dx === 0)   
+         if (mx > snake[0].x * gridSize) { dx = 1; dy = 0; }
             else { dx = -1; dy = 0; }
         }
         else {
-            if (my > snake[0].y * gridSize) { dx = 0; dy = 1; }
-            else { dx = 0; dy = -1; }
+            if (dy === 0)
+            if (my > snake[0].y * gridSize) {  dx = 0; dy = 1;}
+            else { dx = 0; dy = -1;  }
         }     
         if (hasGameEnded()) resetGame();
     });

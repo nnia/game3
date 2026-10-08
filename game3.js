@@ -34,13 +34,14 @@
         }
 
         clearCanvas();
-        ctx.fillText("canvas " + canvas.width + " " + canvas.height, canvas.width / 2, canvas.height / 2 + 10);
+        ctx.fillText("ctx1 " + ctx.width + " " + ctx.height, canvas.width / 2, canvas.height / 2 + 5);
+        ctx.fillText("canvas1 " + canvas.width + " " + canvas.height, canvas.width / 2, canvas.height / 2 + 10);
 
         drawFood();
         moveSnake();
         drawSnake();
 
-        ctx.fillText("ctx " + ctx.width + " " + ctx.height, ctx.width / 2, ctx.height / 2 + 5);
+        ctx.fillText("ctx " + ctx.width + " " + ctx.height, canvas.width / 2, canvas.height / 2 + 5);
         ctx.fillText("canvas " + canvas.width + " " + canvas.height, canvas.width / 2, canvas.height / 2 + 20);
   
         gameInterval = setTimeout(main, speed);

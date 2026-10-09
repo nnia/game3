@@ -11,7 +11,7 @@
     let food = { x: 5, y: 5, c: '0' };
     let dx = 1;
     let dy = 0;
-    let ks = "*";
+   // let ks = 0;
     let gameInterval;
     const speed = 3000; // Скорость игры (мс на один шаг)
 
@@ -126,7 +126,7 @@
         if (hasEatenFood) {
             snake[0].c = food.c;
             //ks += 10;
-            ksElement.innerText = ks;
+            ksElement.innerText += food.c;
             generateFood();
         } else {
             for (let i = 0; i < snake.length-1; i++) {snake[i].c = snake[i+1].c;}
@@ -178,8 +178,8 @@
         food = { x: 5, y: 5, c: '0' };
         dx = 1;
         dy = 0;
-        ks = "*";
-        ksElement.innerText = ks;
+       // ks = 0;
+        ksElement.innerText = "0";
         clearTimeout(gameInterval);
         main();
     }

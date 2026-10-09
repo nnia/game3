@@ -11,7 +11,7 @@
     let food = { x: 5, y: 5, c: '0' };
     let dx = 1;
     let dy = 0;
-    let ks = 0;
+   // let ks = 0;
     let gameInterval;
     const speed = 3000; // Скорость игры (мс на один шаг)
 
@@ -52,8 +52,8 @@
     }
 
     function clearCanvas() {
-        ctx.fillStyle = "#313f37";
-        ctx.fillRect(1, 1, canvas.width - 1, canvas.height - 1);
+        ctx.fillStyle = "#212f27";
+        ctx.fillRect(1, 1, canvas.width - 2, canvas.height - 2);
         
         // Рисуем легкую футуристичную сетку
         ctx.strokeStyle = "rgba(31, 41, 55, 0.4)";
@@ -125,8 +125,8 @@
         const hasEatenFood = snake[0].x === food.x && snake[0].y === food.y;
         if (hasEatenFood) {
             snake[0].c = food.c;
-            ks += 10;
-            ksElement.innerText = ks;
+            //ks += 10;
+            ksElement.innerText = += food.c;
             generateFood();
         } else {
             for (let i = 0; i < snake.length-1; i++) {snake[i].c = snake[i+1].c;}
@@ -178,8 +178,8 @@
         food = { x: 5, y: 5, c: '0' };
         dx = 1;
         dy = 0;
-        ks = 0;
-        ksElement.innerText = ks;
+       // ks = 0;
+        ksElement.innerText = "0";
         clearTimeout(gameInterval);
         main();
     }

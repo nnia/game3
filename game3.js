@@ -128,6 +128,7 @@
     }
 
     function moveSnake() {
+        for (let i = snake.length - 1; i > 0 ; i--) {snake[i] = snake[i-1];}
         const head = { x: snake[0].x + dx, y: snake[0].y + dy, c: snake[0].c };
         snake.unshift(head);
 

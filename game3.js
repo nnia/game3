@@ -129,7 +129,7 @@
             ksElement.innerText = ks;
             generateFood();
         } else {
-            for (let i = snake.length - 1; i > 0 ; i--) {snake[i] = snake[i-1];}
+            for (let i = snake.length - 1; i > 0 ; i--) {snake[i].c = snake[i-1].c;}
             snake.pop();
         }
     }

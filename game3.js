@@ -3,8 +3,8 @@
     const ksElement = document.getElementById("ks");
 
     const gridSize = 20;
-    const tileCountX = canvas.width / gridSize - 1;
-    const tileCountY = canvas.height / gridSize - 1;
+    const tileCountX = canvas.width / gridSize;
+    const tileCountY = canvas.height / gridSize;
 
     let rect = canvas.getBoundingClientRect();
     let snake = [{ x: 3, y: 3, c: '0' }];
@@ -123,7 +123,7 @@
         
         ctx.fillStyle = gradient;
         ctx.font = "20px sans-serif";
-        ctx.fillText("c", food.x * gridSize + gridSize/5, food.y * gridSize + gridSize/5);
+        ctx.fillText(food.c, food.x * gridSize + gridSize/5, food.y * gridSize + gridSize/5);
         ctx.shadowBlur = 0;
     }
 

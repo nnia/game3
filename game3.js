@@ -105,7 +105,7 @@
               //  isHead ? 6 : 4
            // );
                     
-            ctx.fillText(part.c, part.x * gridSize + gridSize/2, part.y * gridSize + gridSize/2);
+            ctx.fillText(part.c, part.x * gridSize + gridSize/5, part.y * gridSize + gridSize/5);
         });
         // Сброс тени для других элементов
         ctx.shadowBlur = 0; 
@@ -123,7 +123,7 @@
         
         ctx.fillStyle = gradient;
         ctx.font = "20px sans-serif";
-        ctx.fillText("c", food.x * gridSize + gridSize/2, food.y * gridSize + gridSize/2);
+        ctx.fillText("c", food.x * gridSize + gridSize/5, food.y * gridSize + gridSize/5);
         ctx.shadowBlur = 0;
     }
 
@@ -133,6 +133,7 @@
 
         const hasEatenFood = snake[0].x === food.x && snake[0].y === food.y;
         if (hasEatenFood) {
+            snake[0].c = food.c;
             ks += 10;
             ksElement.innerText = ks;
             generateFood();

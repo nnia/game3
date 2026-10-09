@@ -45,14 +45,14 @@
         //ctx.fillText("ctx " + ctx.width + "      " + ctx.height, canvas.width / 4, canvas.height / 2 + 5);
         ctx.fillText("mx " + Math.floor(mx) + " my " + Math.floor(my) , canvas.width / 2, canvas.height / 2 + 5);
         //ctx.fillText(" snx " + snake[0].x + "      sny " + snake[0].y, canvas.width / 4, canvas.height / 2 + 20);
-        ctx.fillText("rect " + Math.floor(rect.left) + " " + Math.floor(rect.top), canvas.width / 2, canvas.height / 2 + 35);
+        ctx.fillText("rect " + rect.left + " " + rect.top, canvas.width / 2, canvas.height / 2 + 35);
         //ctx.fillText("canvas " + canvas.width + "      " + canvas.height, canvas.width / 4, canvas.height / 2 + 50);
   
         gameInterval = setTimeout(main, speed);
     }
 
     function clearCanvas() {
-        ctx.fillStyle = "#111а17";
+        ctx.fillStyle = "#1f2717";
         ctx.fillRect(1, 1, canvas.width - 2, canvas.height - 2);
         
         // Рисуем легкую футуристичную сетку
@@ -179,9 +179,7 @@
         dx = 1;
         dy = 0;
        // ks = 0;
-        let code = Math.floor(Math.random() * 36) + 65;
-        food.c = String.fromCharCode(code);
-        //ksElement.innerText = food.c;
+        ksElement.innerText = "0";
         clearTimeout(gameInterval);
         main();
     }
@@ -223,5 +221,4 @@
         if (hasGameEnded()) resetGame();
     });
 
-    
     main();

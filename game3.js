@@ -223,5 +223,5 @@
         if (hasGameEnded()) resetGame();
     });
 
-    resetGame();
+    
     main();

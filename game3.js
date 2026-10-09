@@ -13,7 +13,7 @@
     let dy = 0;
    // let ks = 0;
     let gameInterval;
-    const speed = 3000; // Скорость игры (мс на один шаг)
+    const speed = 2000; // Скорость игры (мс на один шаг)
 
     let mx = 0;
     let my = 0;
@@ -43,7 +43,7 @@
         drawSnake();
 
         //ctx.fillText("ctx " + ctx.width + "      " + ctx.height, canvas.width / 4, canvas.height / 2 + 5);
-        ctx.fillText("mx " + mx + " my " + my , canvas.width / 2, canvas.height / 2 + 5);
+        ctx.fillText("mx " + Math.floor(mx) + " my " + Math.floor(my) , canvas.width / 2, canvas.height / 2 + 5);
         //ctx.fillText(" snx " + snake[0].x + "      sny " + snake[0].y, canvas.width / 4, canvas.height / 2 + 20);
         ctx.fillText("rect " + rect.left + " " + rect.top, canvas.width / 2, canvas.height / 2 + 35);
         //ctx.fillText("canvas " + canvas.width + "      " + canvas.height, canvas.width / 4, canvas.height / 2 + 50);
@@ -52,7 +52,7 @@
     }
 
     function clearCanvas() {
-        ctx.fillStyle = "#212f27";
+        ctx.fillStyle = "#1f2717";
         ctx.fillRect(1, 1, canvas.width - 2, canvas.height - 2);
         
         // Рисуем легкую футуристичную сетку

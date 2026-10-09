@@ -1,4 +1,5 @@
-    const canvas = document.getElementById("gameCanvas");
+// предыдущая готова кроме resize
+const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
     const ksElement = document.getElementById("ks");
 
@@ -200,8 +201,10 @@
 
     });
     document.addEventListener("mouseup", function (e) {
-        mx = event.pageX - rect.left; // Координата X
-        my = event.pageY - rect.top; // Координата Y
+        //mx = event.pageX - rect.left; // Координата X
+       //my = event.pageY - rect.top; // Координата Y
+        mx = event.offsetX; // Координата X
+        my = event.offsetY; // Координата Y
         if (Math.abs(mx - snake[0].x * gridSize) > Math.abs(my - snake[0].y * gridSize)) {
          if (dx === 0)   
          if (mx > snake[0].x * gridSize) { dx = 1; dy = 0; }

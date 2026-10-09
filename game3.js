@@ -52,7 +52,7 @@
     }
 
     function clearCanvas() {
-        ctx.fillStyle = "#1f2717";
+        ctx.fillStyle = "#111а17";
         ctx.fillRect(1, 1, canvas.width - 2, canvas.height - 2);
         
         // Рисуем легкую футуристичную сетку
@@ -179,9 +179,9 @@
         dx = 1;
         dy = 0;
        // ks = 0;
-        let code = Math.floor(Math.random() * 36) + 55;
+        let code = Math.floor(Math.random() * 36) + 65;
         food.c = String.fromCharCode(code);
-        ksElement.innerText = food.c;
+        //ksElement.innerText = food.c;
         clearTimeout(gameInterval);
         main();
     }

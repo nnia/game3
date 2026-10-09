@@ -1,7 +1,7 @@
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
     const rect = canvas.getBoundingClientRect();
-    const scoreElement = document.getElementById("score");
+    const ksElement = document.getElementById("ks");
 
     const gridSize = 20;
     const tileCountX = canvas.width / gridSize - 1;
@@ -11,7 +11,7 @@
     let food = { x: 5, y: 5 };
     let dx = 1;
     let dy = 0;
-    let score = 0;
+    let ks = 0;
     let gameInterval;
     const speed = 3000; // Скорость игры (мс на один шаг)
 
@@ -42,11 +42,11 @@
         moveSnake();
         drawSnake();
 
-        //ctx.fillText("ctx " + ctx.width + " " + ctx.height, canvas.width / 2, canvas.height / 2 + 5);
+        //ctx.fillText("ctx " + ctx.width + "      " + ctx.height, canvas.width / 4, canvas.height / 2 + 5);
         ctx.fillText("mx " + mx + " my " + my , canvas.width / 2, canvas.height / 2 + 5);
-        ctx.fillText(" snx " + snake[0].x + " sny " + snake[0].y, canvas.width / 2, canvas.height / 2 + 20);
+        //ctx.fillText(" snx " + snake[0].x + "      sny " + snake[0].y, canvas.width / 4, canvas.height / 2 + 20);
         ctx.fillText("rect " + rect.left + " " + rect.top, canvas.width / 2, canvas.height / 2 + 35);
-        ctx.fillText("canvas " + canvas.width + " " + canvas.height, canvas.width / 2, canvas.height / 2 + 50);
+        ctx.fillText("canvas " + canvas.width + "      " + canvas.height, canvas.width / 4, canvas.height / 2 + 50);
   
         gameInterval = setTimeout(main, speed);
     }
@@ -133,8 +133,8 @@
 
         const hasEatenFood = snake[0].x === food.x && snake[0].y === food.y;
         if (hasEatenFood) {
-            score += 10;
-            scoreElement.innerText = score;
+            ks += 10;
+            ksElement.innerText = ks;
             generateFood();
         } else {
             snake.pop();
@@ -182,8 +182,8 @@
         food = { x: 5, y: 5 };
         dx = 1;
         dy = 0;
-        score = 0;
-        scoreElement.innerText = score;
+        ks = 0;
+        ksElement.innerText = ks;
         clearTimeout(gameInterval);
         main();
     }

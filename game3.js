@@ -1,14 +1,14 @@
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
-    const rect = canvas.getBoundingClientRect();
     const ksElement = document.getElementById("ks");
 
     const gridSize = 20;
     const tileCountX = canvas.width / gridSize - 1;
     const tileCountY = canvas.height / gridSize - 1;
 
-    let snake = [{ x: 3, y: 3, c: 'O' }];
-    let food = { x: 5, y: 5 };
+    let rect = canvas.getBoundingClientRect();
+    let snake = [{ x: 3, y: 3, c: '0' }];
+    let food = { x: 5, y: 5, c: '0' };
     let dx = 1;
     let dy = 0;
     let ks = 0;
@@ -97,13 +97,13 @@
             ctx.fillStyle = gradient;
             
             // Скругленные сегменты змейки вместо обычных квадратов
-            drawRoundedRect(
-                part.x * gridSize + 1, 
-                part.y * gridSize + 1, 
-                gridSize - 2, 
-                gridSize - 2, 
-                isHead ? 6 : 4
-            );
+            //drawRoundedRect(
+               // part.x * gridSize + 1, 
+              //  part.y * gridSize + 1, 
+              //  gridSize - 2, 
+              //  gridSize - 2, 
+              //  isHead ? 6 : 4
+           // );
                     
             ctx.fillText(part.c, part.x * gridSize + gridSize/2, part.y * gridSize + gridSize/2);
         });
@@ -128,7 +128,7 @@
     }
 
     function moveSnake() {
-        const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+        const head = { x: snake[0].x + dx, y: snake[0].y + dy, c: snake[0].c };
         snake.unshift(head);
 
         const hasEatenFood = snake[0].x === food.x && snake[0].y === food.y;
@@ -144,6 +144,9 @@
     function generateFood() {
         food.x = Math.floor(Math.random() * tileCountX);
         food.y = Math.floor(Math.random() * tileCountY);
+        let code = Math.floor(Math.random() * 36) + 55;
+        if (code < 65) code -= 7;
+        food.c = String.fromCharCode(code);
         
         // Проверяем, чтобы еда не спавнилась внутри змейки
         snake.forEach(part => {
@@ -178,8 +181,8 @@
     }
 
     function resetGame() {
-        snake = [{ x: 3, y: 3 }];
-        food = { x: 5, y: 5 };
+        snake = [{ x: 3, y: 3, c: '0' }];
+        food = { x: 5, y: 5, c: '0' };
         dx = 1;
         dy = 0;
         ks = 0;
@@ -188,6 +191,10 @@
         main();
     }
 
+    document.addEventListener("resize", function (e) {
+        rect = canvas.getBoundingClientRect();
+
+    });
     document.addEventListener("mouseup", function (e) {
         mx = event.pageX - rect.left; // Координата X
         my = event.pageY - rect.top; // Координата Y

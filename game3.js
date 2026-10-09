@@ -14,11 +14,19 @@
    // let ks = 0;
     let gameInterval;
     const speed = 2000; // Скорость игры (мс на один шаг)
+    let firstTime = 1;
 
     let mx = 0;
     let my = 0;
 
     function main() {
+        if (firstTime)
+        {
+            food.c = String.fromCharCode(Math.floor(Math.random() * 36) + 65);
+            snake[0].c = String.fromCharCode(Math.floor(Math.random() * 36) + 65);
+            ksElement.innerText = snake[0].c;
+            firstTime = 0;
+        }
         if (hasGameEnded()) {
             ctx.fillStyle = "rgba(11, 15, 25, 0.8)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -225,9 +233,5 @@
     });
 
 
-    //let code = Math.floor(Math.random() * 36) + 65;
-    //food.c = String.fromCharCode(code);
-    //let code = Math.floor(Math.random() * 36) + 65;
-    //snake[0].c = String.fromCharCode(code);
-    ksElement.innerText = snake[0].c;
+
     main();

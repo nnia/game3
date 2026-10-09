@@ -95,17 +95,7 @@
             }
             
             ctx.fillStyle = gradient;
-            
-            // Скругленные сегменты змейки вместо обычных квадратов
-            //drawRoundedRect(
-               // part.x * gridSize + 1, 
-              //  part.y * gridSize + 1, 
-              //  gridSize - 2, 
-              //  gridSize - 2, 
-              //  isHead ? 6 : 4
-           // );
-                    
-            ctx.fillText(part.c, part.x * gridSize + gridSize/5, part.y * gridSize + gridSize/5);
+            ctx.fillText(part.c, part.x * gridSize + gridSize/5, part.y * gridSize + gridSize*0.8);
         });
         // Сброс тени для других элементов
         ctx.shadowBlur = 0; 
@@ -123,12 +113,12 @@
         
         ctx.fillStyle = gradient;
         ctx.font = "20px sans-serif";
-        ctx.fillText(food.c, food.x * gridSize + gridSize/5, food.y * gridSize + gridSize/5);
+        ctx.fillText(food.c, food.x * gridSize + gridSize/5, food.y * gridSize + gridSize*0.8);
         ctx.shadowBlur = 0;
     }
 
     function moveSnake() {
-        for (let i = snake.length - 1; i > 0 ; i--) {snake[i] = snake[i-1];}
+        //
         const head = { x: snake[0].x + dx, y: snake[0].y + dy, c: snake[0].c };
         snake.unshift(head);
 
@@ -139,6 +129,7 @@
             ksElement.innerText = ks;
             generateFood();
         } else {
+            for (let i = snake.length - 1; i > 0 ; i--) {snake[i] = snake[i-1];}
             snake.pop();
         }
     }

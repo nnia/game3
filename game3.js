@@ -179,7 +179,10 @@
         dx = 1;
         dy = 0;
        // ks = 0;
-        ksElement.innerText = "0";
+        let code = Math.floor(Math.random() * 36) + 55;
+        if (code < 65) code -= 7;
+        snake[0].c = String.fromCharCode(code);
+        ksElement.innerText = "snake[0].c";
         clearTimeout(gameInterval);
         main();
     }
@@ -221,4 +224,7 @@
         if (hasGameEnded()) resetGame();
     });
 
+
+    let code = Math.floor(Math.random() * 36) + 65;
+    food.c = String.fromCharCode(code);
     main();

@@ -24,11 +24,11 @@
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
             ctx.font = "bold 30px sans-serif";
-            ctx.fillStyle = "#ff416c";
+            ctx.fillStyle = "#41ff6c";
             ctx.textAlign = "center";
             ctx.shadowBlur = 15;
-            ctx.shadowColor = "#ff416c";
-            ctx.fillText("Игра Окончена", canvas.width / 2, canvas.height / 2);
+            ctx.shadowColor = "#51ff7c";
+            ctx.fillText("Согласовано", canvas.width / 2, canvas.height / 2);
             
             ctx.font = "16px sans-serif";
             ctx.fillStyle = "#a0aec0";
@@ -46,7 +46,7 @@
         ctx.fillText("mx " + mx + " my " + my , canvas.width / 2, canvas.height / 2 + 5);
         //ctx.fillText(" snx " + snake[0].x + "      sny " + snake[0].y, canvas.width / 4, canvas.height / 2 + 20);
         ctx.fillText("rect " + rect.left + " " + rect.top, canvas.width / 2, canvas.height / 2 + 35);
-        ctx.fillText("canvas " + canvas.width + "      " + canvas.height, canvas.width / 4, canvas.height / 2 + 50);
+        //ctx.fillText("canvas " + canvas.width + "      " + canvas.height, canvas.width / 4, canvas.height / 2 + 50);
   
         gameInterval = setTimeout(main, speed);
     }

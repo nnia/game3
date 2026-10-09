@@ -225,9 +225,9 @@
     });
 
 
-    let code = Math.floor(Math.random() * 36) + 65;
-    food.c = String.fromCharCode(code);
-    let code = Math.floor(Math.random() * 36) + 65;
-    snake[0].c = String.fromCharCode(code);
-    ksElement.innerText = snake[0].c;
+    //let code = Math.floor(Math.random() * 36) + 65;
+    //food.c = String.fromCharCode(code);
+    //let code = Math.floor(Math.random() * 36) + 65;
+    //snake[0].c = String.fromCharCode(code);
+    //ksElement.innerText = snake[0].c;
     main();

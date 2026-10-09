@@ -179,7 +179,9 @@
         dx = 1;
         dy = 0;
        // ks = 0;
-        ksElement.innerText = "0";
+        let code = Math.floor(Math.random() * 36) + 55;
+        food.c = String.fromCharCode(code);
+        ksElement.innerText = food.c;
         clearTimeout(gameInterval);
         main();
     }
@@ -221,4 +223,5 @@
         if (hasGameEnded()) resetGame();
     });
 
+    resetGame();
     main();

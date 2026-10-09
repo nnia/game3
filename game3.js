@@ -126,7 +126,7 @@
         if (hasEatenFood) {
             snake[0].c = food.c;
             //ks += 10;
-            ksElement.innerText = += food.c;
+            ksElement.innerText += food.c;
             generateFood();
         } else {
             for (let i = 0; i < snake.length-1; i++) {snake[i].c = snake[i+1].c;}

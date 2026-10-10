@@ -14,7 +14,7 @@ const canvas = document.getElementById("gameCanvas");
     let dy = 0;
    // let ks = 0;
     let gameInterval;
-    const speed = 2000; // Скорость игры (мс на один шаг)
+    const speed = 1000; // Скорость игры (мс на один шаг)
     let firstTime = 1;
 
     let mx = 0;

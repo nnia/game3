@@ -111,7 +111,7 @@ const canvas = document.getElementById("gameCanvas");
             }
             
             ctx.fillStyle = gradient;
-            ctx.fillText(part.c, part.x * gridSize + gridSize/5, part.y * gridSize + gridSize*0.8);
+            ctx.fillText(part.c, part.x * gridSize + gridSize*0.25, part.y * gridSize + gridSize*0.8);
         });
         // Сброс тени для других элементов
         ctx.shadowBlur = 0; 
@@ -122,14 +122,14 @@ const canvas = document.getElementById("gameCanvas");
         ctx.shadowColor = "#ff416c";
         const gradient = ctx.createRadialGradient(
             food.x * gridSize + gridSize/2, food.y * gridSize + gridSize/2, 1,
-            food.x * gridSize + gridSize/2, food.y * gridSize + gridSize/2, gridSize/2
+            food.x * gridSize + gridSize/2.5, food.y * gridSize + gridSize/2, gridSize/2
         );
         gradient.addColorStop(0, '#ff4b2b');
         gradient.addColorStop(1, '#ff416c');
         
         ctx.fillStyle = gradient;
         ctx.font = "20px sans-serif";
-        ctx.fillText(food.c, food.x * gridSize + gridSize/5, food.y * gridSize + gridSize*0.8);
+        ctx.fillText(food.c, food.x * gridSize + gridSize*0.25, food.y * gridSize + gridSize*0.8);
         ctx.shadowBlur = 0;
     }
 

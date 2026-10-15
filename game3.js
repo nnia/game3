@@ -14,7 +14,7 @@ const canvas = document.getElementById("gameCanvas");
     let dy = 0;
    // let ks = 0;
     let gameInterval;
-    const speed = 1000; // Скорость игры (мс на один шаг)
+    const speed = 500; // Скорость игры (мс на один шаг)
     let firstTime = 1;
 
     let mx = 0;
@@ -23,8 +23,8 @@ const canvas = document.getElementById("gameCanvas");
     function main() {
         if (firstTime)
         {
-            food.c = String.fromCharCode(Math.floor(Math.random() * 36) + 65);
-            snake[0].c = String.fromCharCode(Math.floor(Math.random() * 36) + 65);
+            food.c = String.fromCharCode(Math.floor(Math.random() * 36) + 45);
+            snake[0].c = String.fromCharCode(Math.floor(Math.random() * 36) + 45);
             ksElement.innerText = snake[0].c;
             firstTime = 0;
         }

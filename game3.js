@@ -220,7 +220,10 @@ const canvas = document.getElementById("gameCanvas");
             if (my > snake[0].y * gridSize) {  dx = 0; dy = 1;}
             else { dx = 0; dy = -1;  }
         }     
-        if (hasGameEnded()) resetGame();
+        if (hasGameEnded()) 
+        {
+            if ((mx > 0) && (my > 0) && (mx < canvas.width) && (my < canvas.height)) resetGame();
+        }
     });
     window.addEventListener("keydown", e => {
         switch (e.key) {

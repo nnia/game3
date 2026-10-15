@@ -20,11 +20,18 @@ const canvas = document.getElementById("gameCanvas");
     let mx = 0;
     let my = 0;
 
+    function generateOneSymb()
+    {
+        let code = Math.floor(Math.random() * 16) + 55;
+        if (code < 65) code -= 7;
+        return String.fromCharCode(code);
+    }
     function main() {
         if (firstTime)
         {
-            food.c = String.fromCharCode(Math.floor(Math.random() * 36) + 45);
-            snake[0].c = String.fromCharCode(Math.floor(Math.random() * 36) + 45);
+
+            food.c = generateOneSymb();
+            snake[0].c = generateOneSymb();
             ksElement.innerText = snake[0].c;
             firstTime = 0;
         }
@@ -146,9 +153,7 @@ const canvas = document.getElementById("gameCanvas");
     function generateFood() {
         food.x = Math.floor(Math.random() * tileCountX);
         food.y = Math.floor(Math.random() * tileCountY);
-        let code = Math.floor(Math.random() * 36) + 55;
-        if (code < 65) code -= 7;
-        food.c = String.fromCharCode(code);
+        food.c = generateOneSymb();
         
         // Проверяем, чтобы еда не спавнилась внутри змейки
         snake.forEach(part => {
